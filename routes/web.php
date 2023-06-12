@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\PersonController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,14 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
-Route::get('/', function () {
-    return view('index');
-});
-
+Route::resource('/doctors',DoctorController::class);
 Route::get('/login', AuthenticationController::class . '@loginIndex');
 Route::get('/register', AuthenticationController::class . '@registerIndex');
 Route::post('/login', AuthenticationController::class . '@login');

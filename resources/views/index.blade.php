@@ -1,7 +1,3 @@
-@extends('layout.layout')
-@section('title', 'Person')
-@section('content')
-
 <!doctype html>
 <html lang="en">
 
@@ -19,11 +15,13 @@
 
 <body>
   <header>
+    <!-- place navbar here -->
   </header>
   <main>
-
+<h1>Cccc</h1>
   </main>
   <footer>
+    <!-- place footer here -->
   </footer>
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
@@ -36,5 +34,3 @@
 </body>
 
 </html>
-
-@endsection
