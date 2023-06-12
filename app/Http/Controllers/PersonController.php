@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Person;
+use App\Models\Prescription;
 
 class PersonController extends Controller
 {
