@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PersonController;
 use App\Http\Controllers\HealthController;
 use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\CheckController;
 use App\Http\Controllers\PrescriptionController;
 use App\Http\Controllers\AuthenticationController;
 
@@ -32,6 +33,7 @@ Route::resource('/prescriptions', PrescriptionController::class);
 Route::resource('/healths', HealthController::class);
 Route::resource('/doctors', DoctorController::class);
 Route::resource('/doctors',DoctorController::class);
+Route::resource('/checks',CheckController::class);
 Route::get('/login', AuthenticationController::class . '@loginIndex');
 Route::get('/register', AuthenticationController::class . '@registerIndex');
 Route::post('/login', AuthenticationController::class . '@login');
