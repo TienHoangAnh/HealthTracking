@@ -30,6 +30,7 @@ Route::resource('/people', PersonController::class);
 Route::resource('/prescriptions', PrescriptionController::class);
 Route::resource('/healths', HealthController::class);
 Route::resource('/doctors', DoctorController::class);
+Route::resource('/doctors',DoctorController::class);
 Route::get('/login', AuthenticationController::class . '@loginIndex');
 Route::get('/register', AuthenticationController::class . '@registerIndex');
 Route::post('/login', AuthenticationController::class . '@login');
