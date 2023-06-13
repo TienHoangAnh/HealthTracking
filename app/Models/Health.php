@@ -15,7 +15,7 @@ class Health extends Model
         'symptom'
     ];
 
-    public function person(){
-        return $this->hasMany(Health::class);
+    public function people(){
+        return $this->belongsTo(Person::class);
     }
 }

@@ -47,7 +47,16 @@
                                 Prescription
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="nav-link" href="{{url("/prescription/create")}}">Create new person <span class="visually-hidden"></span></a>
+                                <a class="nav-link" href="{{url("/prescriptions/create")}}">Create new person <span class="visually-hidden"></span></a>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                MedicalCheck
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="nav-link" href="{{url("/checks/create")}}">Create MedicalCheck <span class="visually-hidden"></span></a>
                             </ul>
                         </li>
                     </ul>
