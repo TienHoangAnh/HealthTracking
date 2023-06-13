@@ -14,4 +14,8 @@ class Health extends Model
         'height',
         'symptom'
     ];
+
+    public function person(){
+        return $this->hasMany(Health::class);
+    }
 }

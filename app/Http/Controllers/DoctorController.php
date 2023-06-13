@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Doctor;
+use App\Models\Health;
 
 class DoctorController extends Controller
 {
@@ -47,7 +48,7 @@ class DoctorController extends Controller
      */
     public function show(string $id)
     {
-        $doctor = Doctor::All($id);
+        $doctor = Doctor::find($id);
         return view('doctor.show',[
             'doctor' => $doctor,
         ]);

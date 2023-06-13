@@ -1,6 +1,6 @@
 @extends('layout.layout')
-@section('title','List doctors');
-@section('content');
+@section('title','List doctors')
+@section('content')
 <div class="table-responsive">
     <table class="table table-primary">
         <thead>
@@ -14,9 +14,10 @@
         <tbody>
             <tr class="">
                 @foreach ($doctors as $doctor)
-
                 <td><a href="{{url("/doctors/".$doctor->id."/show")}}">
                     {{$doctor->name}}</a></td>
+
+                <td>{{$doctor->name}}</td>
                 <td>{{$doctor->department}}</td>
                 <td>{{$doctor->phone}}</td>
                 <td>
@@ -33,7 +34,4 @@
         </tbody>
     </table>
 </div>
-
-
-
 @endsection

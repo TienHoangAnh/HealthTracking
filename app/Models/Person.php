@@ -23,4 +23,9 @@ class Person extends Model
     {
         return $this->belongsToMany(Prescription::class);
     }
+
+    public function health()
+    {
+        return $this->belongsTo(Health::class);
+    }
 }

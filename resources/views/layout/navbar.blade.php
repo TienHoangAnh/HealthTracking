@@ -29,7 +29,7 @@
                                 Health
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="nav-link" href="{{url("/healths/create")}}">Create new person <span class="visually-hidden"></span></a>
+                                <a class="nav-link" href="{{url("/healths/create")}}">Create health information <span class="visually-hidden"></span></a>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -38,7 +38,7 @@
                                 Doctor
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="nav-link" href="{{url("/doctors/create")}}">Create new person <span class="visually-hidden"></span></a>
+                                <a class="nav-link" href="{{url("/doctors/create")}}">Create new doctor <span class="visually-hidden"></span></a>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">

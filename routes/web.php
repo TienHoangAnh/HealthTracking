@@ -7,6 +7,7 @@ use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\PrescriptionController;
 use App\Http\Controllers\AuthenticationController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
