@@ -10,8 +10,7 @@ use App\Models\Health;
 class Person extends Model
 {
     use HasFactory;
-    protected $table = 'people';
-    protected $fillable = [
+        protected $fillable = [
         'name',
         'birth',
         'address',
