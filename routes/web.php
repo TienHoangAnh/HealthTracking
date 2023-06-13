@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Https\Controllers\PrescriptionController;
+use App\Http\Controllers\PrescriptionController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\PersonController;
 
