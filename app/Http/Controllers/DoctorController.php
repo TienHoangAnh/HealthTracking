@@ -47,7 +47,7 @@ class DoctorController extends Controller
      */
     public function show(string $id)
     {
-        $doctor = Doctor::All($id);
+        $doctor = Doctor::find($id);
         return view('doctor.show',[
             'doctor' => $doctor,
         ]);
