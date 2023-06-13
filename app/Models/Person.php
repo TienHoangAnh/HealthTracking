@@ -9,6 +9,8 @@ use App\Models\Prescription;
 class Person extends Model
 {
     use HasFactory;
+    protected $table = 'people';
+
     protected $fillable = [
         'name',
         'birth',

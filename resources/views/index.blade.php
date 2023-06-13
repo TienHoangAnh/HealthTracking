@@ -18,7 +18,6 @@
     <!-- place navbar here -->
   </header>
   <main>
-<h1>Cccc</h1>
   </main>
   <footer>
     <!-- place footer here -->
