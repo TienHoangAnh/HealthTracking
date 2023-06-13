@@ -47,7 +47,7 @@ class PrescriptionController extends Controller
     public function show(string $id)
     {
         $prescription = Prescription::find($id);
-        return view('prescription.show', [$prescription => prescription]);
+        return view('prescription.show', ['prescription' => $prescription]);
     }
 
     /**
@@ -56,7 +56,7 @@ class PrescriptionController extends Controller
     public function edit(string $id)
     {
         $prescription = Prescription::find($id);
-        return view('prescription.edit', [$prescription => prescription]);
+        return view('prescription.edit', ['prescription' => $prescription]);
     }
 
     /**
