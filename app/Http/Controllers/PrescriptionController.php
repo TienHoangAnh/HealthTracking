@@ -13,7 +13,7 @@ class PrescriptionController extends Controller
     public function index()
     {
         $prescriptions = Prescription::All();
-        return view('prescription.index', [$prescriptions => prescriptions,
+        return view('prescription.index', ['prescriptions' => $prescriptions,
     ]);
     }
 
