@@ -5,10 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Prescription;
+use App\Models\Health;
 
 class Person extends Model
 {
     use HasFactory;
+    protected $table = 'people';
     protected $fillable = [
         'name',
         'birth',
@@ -22,8 +24,8 @@ class Person extends Model
         return $this->belongsToMany(Prescription::class);
     }
 
-    public function health()
+    public function healths()
     {
-        return $this->belongsTo(Health::class);
+        return $this->hasMany(Health::class);
     }
 }

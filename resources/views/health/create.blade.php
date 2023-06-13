@@ -4,6 +4,14 @@
 <form action="/healths" method="post">
     @csrf
     <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <select name="person" id="person" class="form-control">
+          @foreach($people as $person)
+          <option value="{{$person->id}}">{{$person->name}}</option>
+          @endforeach
+      </select>
+      </div>
+    <div class="mb-3">
         <label for="weight" class="form-label">Weight (kg) </label>
         <input type="number" class="form-control" id="weight" name="weight" placeholder="Weight">
     </div>

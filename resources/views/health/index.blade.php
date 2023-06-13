@@ -5,6 +5,7 @@
     <table class="table table-primary">
         <thead>
             <tr>
+                <th scope="col">Name</th>
                 <th scope="col">Weight</th>
                 <th scope="col">Height</th>
                 <th scope="col">Symptom</th>
@@ -14,7 +15,13 @@
         <tbody>
             <tr class="">
                 @foreach ($healths as $health)
-                
+                <td>
+                    @if ($health->people)
+                      @foreach ($health->people as $person)
+                        <span class="badge badge-info">{{ $person->name }}</span>
+                      @endforeach
+                    @endif
+                  </td>
                 <td>{{$health->weight}}</td>
                 <td>{{$health->height}}</td>
                 <td>{{$health->symptom}}</td>
