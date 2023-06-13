@@ -1,7 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Https\Controllers\PrescriptionController;
+use App\Http\Controllers\PersonController;
+use App\Http\Controllers\HealthController;
+use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\PrescriptionController;
+use App\Http\Controllers\AuthenticationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,12 +22,14 @@ use App\Https\Controllers\PrescriptionController;
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
 
+Route::resource('/people', PersonController::class);
 Route::resource('/prescriptions', PrescriptionController::class);
-
+Route::resource('/healths', HealthController::class);
+Route::resource('/doctors', DoctorController::class);
 Route::get('/login', AuthenticationController::class . '@loginIndex');
 Route::get('/register', AuthenticationController::class . '@registerIndex');
 Route::post('/login', AuthenticationController::class . '@login');

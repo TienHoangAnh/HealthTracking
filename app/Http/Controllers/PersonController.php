@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Person;
-use App\Models\Prescription;
+use Illuminate\Support\Facades\Auth;
 
 class PersonController extends Controller
 {
@@ -12,10 +12,12 @@ class PersonController extends Controller
      */
     public function index()
     {
-        $person = Person::all();
+         if(!Auth::check()) { return redirect('/login'); }
+
+        $people = Person::all();
 
         return view('person.index', [
-            'people' => $person,
+            'people' => $people,
         ]);
     }
 
@@ -43,7 +45,7 @@ class PersonController extends Controller
 
         $person->save();
 
-        return redirect('/person');
+        return redirect('/people');
     }
 
     /**
@@ -86,7 +88,7 @@ class PersonController extends Controller
 
         $person->save();
 
-        return redirect('/person');
+        return redirect('/people');
     }
 
     /**
@@ -98,6 +100,6 @@ class PersonController extends Controller
 
         $person->delete();
 
-        return redirect('/person');
+        return redirect('/people');
     }
 }

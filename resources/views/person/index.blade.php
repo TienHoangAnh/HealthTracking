@@ -1,40 +1,50 @@
 @extends('layout.layout')
-@section('title', 'Person')
+@section('title','Person')
 @section('content')
 
-<!doctype html>
-<html lang="en">
+<h2>@yield('title')</h2>
 
-<head>
-  <title>Title</title>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS v5.2.1 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
-</head>
-
-<body>
-  <header>
-  </header>
-  <main>
-
-  </main>
-  <footer>
-  </footer>
-  <!-- Bootstrap JavaScript Libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-  </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-  </script>
-</body>
-
-</html>
+<div class="table-responsive">
+    <table class="table table-striped
+    table-hover
+    table-borderless
+    table-primary
+    align-middle">
+        <thead class="table-light">
+            <tr>
+                <th>Name Person</th>
+                <th>IDcard Person</th>
+                <th>Phone Person</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                  @foreach ($people as $person)
+                  <tr class="table-primary" >
+                    <td>
+                        {{$person->name}}
+                    </td>
+                    <td>
+                        {{$person->idcard}}
+                    </td>
+                    <td>
+                        {{$person->phone}}
+                    </td>
+                    <td>
+                      <a href="{{url("/people/".$person->id)}}" class="btn btn-primary">View</a>
+                      <a href="{{url("/people/".$person->id."/edit")}}" class="btn btn-warning">Edit</a>
+                      <form action="{{url("/people/".$person->id)}}" method="post" class="d-inline">
+                        {{ method_field('DELETE') }}
+                        @csrf
+                        <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?');">Delete</button>
+                      </form>
+                    </td>
+                  </tr>
+                  @endforeach
+            </tbody>
+            <tfoot>
+            </tfoot>
+    </table>
+  </div>
 
 @endsection

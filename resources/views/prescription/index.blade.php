@@ -6,7 +6,7 @@
 
 <div class="table-responsive">
     <table class="table table-striped
-    table-hover	
+    table-hover
     table-borderless
     table-primary
     align-middle">
@@ -33,11 +33,11 @@
                       </form>
                     </td>
                   </tr>
-                  
-                  @endforeach     
+
+                  @endforeach
             </tbody>
             <tfoot>
-                
+
             </tfoot>
     </table>
   </div>

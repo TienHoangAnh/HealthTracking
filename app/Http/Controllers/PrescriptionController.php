@@ -13,7 +13,7 @@ class PrescriptionController extends Controller
     public function index()
     {
         $prescriptions = Prescription::All();
-        return view('prescription.index', [$prescriptions => prescriptions,
+        return view('prescription.index', ['prescriptions' => $prescriptions,
     ]);
     }
 
@@ -31,7 +31,7 @@ class PrescriptionController extends Controller
     public function store(Request $request)
     {
         $prescription = new Prescription();
-        
+
         $prescription->name = $request->name;
         $prescription->amount = $request->amount;
         $prescription->using = $request->using;
@@ -47,7 +47,7 @@ class PrescriptionController extends Controller
     public function show(string $id)
     {
         $prescription = Prescription::find($id);
-        return view('prescription.show', [$prescription => prescription]);
+        return view('prescription.show', ['prescription' => $prescription]);
     }
 
     /**
@@ -56,7 +56,7 @@ class PrescriptionController extends Controller
     public function edit(string $id)
     {
         $prescription = Prescription::find($id);
-        return view('prescription.edit', [$prescription => prescription]);
+        return view('prescription.edit', ['prescription' => $prescription]);
     }
 
     /**
@@ -65,7 +65,7 @@ class PrescriptionController extends Controller
     public function update(Request $request, string $id)
     {
         $prescription = new Prescription();
-        
+
         $prescription->name = $request->name;
         $prescription->amount = $request->amount;
         $prescription->using = $request->using;
