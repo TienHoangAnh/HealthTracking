@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Https\Controllers\PrescriptionController;
+use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\PersonController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,11 +20,12 @@ use App\Https\Controllers\PrescriptionController;
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
 
 Route::resource('/prescriptions', PrescriptionController::class);
+Route::resource('/doctors',DoctorController::class);
 
 Route::get('/login', AuthenticationController::class . '@loginIndex');
 Route::get('/register', AuthenticationController::class . '@registerIndex');
