@@ -13,7 +13,8 @@ class Doctor extends Model
     protected $fillable = [
         'name',
         'department',
-        'phone'
+        'phone',
+        'description'
     ];
 
     public function checks()

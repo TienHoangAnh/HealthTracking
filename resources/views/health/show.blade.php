@@ -1,11 +1,23 @@
 @extends('layout.layout')
 @section('title', 'Health Details')
 @section('content')
-    <div class="card">
-        <div class="card-body">
-            <h4 class="card-title">{{$health->weight}}</h4>
-            <p class="card-text">{{$health->height}}</p>
-            <p class="card-text">{{$health->symptom}}</p>
-        </div>
-    </div>
+   <div class="table-responsive">
+    <table class="table table-primary">
+        <thead>
+            <tr>
+                <th scope="col">Weight</th>
+                <th scope="col">Height</th>
+                <th scope="col">Symptom</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="">
+                <td scope="row">{{$health->weight}}</td>
+                <td>{{$health->height}}</td>
+                <td>{{$health->symptom}}</td>
+            </tr>
+        </tbody>
+    </table>
+   </div>
+   
 @endsection

@@ -38,7 +38,7 @@ class DoctorController extends Controller
         $doctor->name = $request->name;
         $doctor->department = $request->department;
         $doctor->phone= $request->phone;
-
+        $doctor->description = $request->description;
         $doctor->save();
         return redirect('/doctors');
     }
@@ -74,7 +74,7 @@ class DoctorController extends Controller
         $doctor->name = $request->name;
         $doctor->department = $request->department;
         $doctor->phone= $request->phone;
-
+        $doctor->description = $request->description;
         $doctor->save();
         return redirect('/doctors');
     }
