@@ -4,20 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Check;
+use App\Models\Doctor;
 
-class Doctor extends Model
+class Check extends Model
 {
     use HasFactory;
-    protected $table = 'doctors';
+    protected $table = 'checks';
     protected $fillable = [
-        'name',
+        'date',
+        'address',
         'department',
-        'phone'
     ];
 
-    public function checks()
+    public function doctor()
     {
-        return $this->hasMany(Check::class);
+        return $this->belongsTo(Doctor::class);
     }
 }
