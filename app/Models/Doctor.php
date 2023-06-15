@@ -14,7 +14,8 @@ class Doctor extends Model
         'name',
         'department',
         'phone',
-        'description'
+        'description',
+        'photo'
     ];
 
     public function checks()

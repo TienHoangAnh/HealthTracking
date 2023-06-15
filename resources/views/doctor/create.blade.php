@@ -1,11 +1,15 @@
 @extends('layout.layout')
 @section('title', 'New Doctor')
 @section('content')
-<form action="/doctors" method="post">
+<form action="/doctors" method="post" enctype="multipart/form-data">
     @csrf
     <div class="mb-3">
         <label for="name" class="form-label">Doctor Name</label>
         <input type="text" class="form-control" id="name" name="name" placeholder="Doctor Name">
+    </div>
+    <div class="mb-3">
+        <label for="photo" class="form-label">Doctor Image</label>
+        <input type="file" class="form-control" id="photo" name="photo" placeholder="Doctor Name">
     </div>
     <div class="mb-3">
         <label for="department" class="form-label">Department</label>
