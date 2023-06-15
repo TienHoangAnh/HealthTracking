@@ -21,6 +21,7 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="nav-link" href="{{url("/people/create")}}">Create new person <span class="visually-hidden"></span></a>
+                                <a class="nav-link" href="{{url("/people")}}">Health list<span class="visually-hidden"></span></a>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -30,7 +31,7 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="nav-link" href="{{url("/healths/create")}}">Create health information <span class="visually-hidden"></span></a>
-                                <a class="nav-link" href="{{url("/healths")}}">Health list<span class="visually-hidden"></span></a>
+                                <a class="nav-link" href="{{url("/healths")}}">People list<span class="visually-hidden"></span></a>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -49,7 +50,8 @@
                                 Prescription
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="nav-link" href="{{url("/prescriptions/create")}}">Create new person <span class="visually-hidden"></span></a>
+                                <a class="nav-link" href="{{url("/prescriptions/create")}}">Create new prescription <span class="visually-hidden"></span></a>
+                                <a class="nav-link" href="{{url("/prescriptions")}}">Prescription list<span class="visually-hidden"></span></a>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -59,6 +61,7 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="nav-link" href="{{url("/checks/create")}}">Create MedicalCheck <span class="visually-hidden"></span></a>
+                                <a class="nav-link" href="{{url("/checks")}}">MedicalCheck list<span class="visually-hidden"></span></a>
                             </ul>
                         </li>
                     </ul>
