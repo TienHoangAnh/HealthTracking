@@ -17,7 +17,7 @@
                 <td><a href="{{url("/doctors/".$doctor->id."/show")}}">
                     {{$doctor->name}}</a></td>
 
-                {{-- <td>{{$doctor->name}}</td> --}}
+                <td>{{$doctor->name}}</td>
                 <td>{{$doctor->department}}</td>
                 <td>{{$doctor->phone}}</td>
                 <td>

@@ -9,11 +9,12 @@ use App\Models\Check;
 class Doctor extends Model
 {
     use HasFactory;
-    protected $table = 'doctor';
+    protected $table = 'doctors';
     protected $fillable = [
         'name',
         'department',
-        'phone'
+        'phone',
+        'description'
     ];
 
     public function checks()

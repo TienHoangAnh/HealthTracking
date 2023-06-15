@@ -16,6 +16,10 @@
         <label for="phone" class="form-label">Doctor Phone</label>
         <input type="text" class="form-control" id="phone" name="phone" placeholder="Doctor Phone" value="{{$doctor->phone}}">
     </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Description of Doctor</label>
+        <input type="text" class="form-control" id="description" name="description" placeholder="Description" value="{{$doctor->description}}">
+    </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 @endsection

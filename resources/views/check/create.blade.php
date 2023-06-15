@@ -16,7 +16,12 @@
     </div>
     <div class="mb-3">
         <label for="department" class="form-label">Department</label>
-        <input type="text" class="form-control" id="department" name="department" placeholder="Department">
+        <select class="form-control" id="department" name="department">
+          <option selected>Choose Department</option>
+          @foreach($doctors as $doctor)
+          <option value="{{ $doctor->id }}">{{ $doctor->department }}</option>
+          @endforeach
+        </select>
     </div>
     <div class="mb-3">
         <label for="doctor" class="form-label">Doctor</label>
