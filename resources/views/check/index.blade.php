@@ -6,7 +6,7 @@
 
 <div class="table-responsive">
     <table class="table table-striped
-    table-hover	
+    table-hover
     table-borderless
     table-primary
     align-middle">
@@ -25,7 +25,7 @@
                     <td>{{$check->date}}</td>
                     <td>{{$check->address}}</td>
                     <td>
-                      <a href="{{url("/doctors/".$check->doctor->id)}}">
+                      <a href="{{url("/doctors/".$check->doctor->id)}}" class="btn btn-success">
                         {{$check->doctor->name}}
                       </a>
                     </td>
@@ -39,10 +39,10 @@
                       </form>
                     </td>
                   </tr>
-                  @endforeach     
+                  @endforeach
             </tbody>
             <tfoot>
-                
+
             </tfoot>
     </table>
   </div>
