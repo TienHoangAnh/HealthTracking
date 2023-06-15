@@ -16,7 +16,7 @@
     </div>
     <div class="mb-3">
         <label for="using" class="form-label">Using Prescription</label>
-        <input type="text" class="form-control" id="Using" name="Using" placeholder="Using Prescription">
+        <input type="text" class="form-control" id="using" name="using" placeholder="Using Prescription">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
