@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('prescriptions', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('amout');
+            $table->string('amount');
             $table->string('using');
             $table->timestamps();
         });
