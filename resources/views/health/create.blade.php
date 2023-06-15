@@ -6,7 +6,7 @@
     <div class="mb-3">
         <label for="name" class="form-label">Name</label>
         <select name="person" id="person" class="form-control">
-          @foreach($people as $person)
+          @foreach($person as $person)
           <option value="{{$person->id}}">{{$person->name}}</option>
           @endforeach
       </select>

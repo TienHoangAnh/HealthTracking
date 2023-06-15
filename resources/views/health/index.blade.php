@@ -15,13 +15,7 @@
         <tbody>
             <tr class="">
                 @foreach ($healths as $health)
-                <td>
-                    @if ($health->people)
-                      @foreach ($health->people as $person)
-                        <span class="badge badge-info">{{ $person->name }}</span>
-                      @endforeach
-                    @endif
-                  </td>
+                <td>{{$health->person->name}}</td>
                 <td>{{$health->weight}}</td>
                 <td>{{$health->height}}</td>
                 <td>{{$health->symptom}}</td>

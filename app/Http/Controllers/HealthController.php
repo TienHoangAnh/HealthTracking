@@ -14,9 +14,9 @@ class HealthController extends Controller
     public function index()
     {
         $healths = Health::All();
-        $people = Person::All();
+        $person = Person::All();
         return view('health.index',[
-            'healths' => $healths,'people' => $people,
+            'healths' => $healths,'person' => $person,
         ]);
     }
 
@@ -25,9 +25,9 @@ class HealthController extends Controller
      */
     public function create()
     {
-        $people = Person::all();
+        $person = Person::all();
         return view('health.create',[
-            'people' => $people,
+            'person' => $person,
         ]);
     }
     /**

@@ -15,7 +15,7 @@ class Health extends Model
         'symptom'
     ];
 
-    public function people(){
+    public function person(){
         return $this->belongsTo(Person::class);
     }
 }
