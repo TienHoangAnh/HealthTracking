@@ -41,7 +41,7 @@ body{
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 .container{
-  max-width: 700px;
+  max-width: 400px;
   width: 100%;
   background-color: #fff;
   padding: 25px 30px;
@@ -143,6 +143,11 @@ form .input-box span.details{
    transition: all 0.3s ease;
    background: linear-gradient(135deg, #71b7e6, #9b59b6);
  }
+ form .user-details .input-box {
+  margin-bottom: 15px;
+  width: calc(100% - 40px);
+}
+
  form .button input:hover{
   /* transform: scale(0.99); */
   background: linear-gradient(-135deg, #71b7e6, #9b59b6);
@@ -171,39 +176,45 @@ form .user-details .input-box{
     flex-direction: column;
   }
 }
+.btn-primary{
+
+}
 </style>
 <!DOCTYPE html>
-<!-- Created By CodingLab - www.codinglabweb.com -->
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <title> Responsive Registration Form | CodingLab </title>
+    <title>Registration</title>
     <link rel="stylesheet" href="style.css">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
 <body>
   <div class="container">
-    <div class="title">Registration</div>
+    <div style="margin-left:100px" class="title">Register</div>
     <div class="content">
       <form action="/register" method="post">
+        @csrf
         <div class="user-details">
-                @csrf
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" name="name" id="name" class="form-control" placeholder="Enter name" required>
-                    <label for="email">Email address:</label>
-                    <input type="email" name="email" id="email" class="form-control" placeholder="Enter email" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" name="password" id="password" class="form-control" placeholder="Enter password" required>
-
-                    <label for="pwd">Confirm Password:</label>
-                    <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="Enter password" required>
-                </div>
-            
-        </div>
-        <button type="submit" class="btn btn-primary">Register</button>
+          <div class="form-group">
+              <div class="input-box">
+                  <label for="name">Name:</label>
+                  <input type="text" name="name" id="name" class="form-control" placeholder="Enter name" required>
+              </div>
+              <div class="input-box">
+                  <label for="email">Email address:</label>
+                  <input type="email" name="email" id="email" class="form-control" placeholder="Enter email" required>
+              </div>
+              <div class="input-box">
+                  <label for="password">Password:</label>
+                  <input type="password" name="password" id="password" class="form-control" placeholder="Enter password" required>
+              </div>
+              <div class="input-box">
+                  <label for="password_confirmation">Confirm Password:</label>
+                  <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="Enter password" required>
+              </div>
+          </div>
+      </div>
+        <button style="margin-left:140px" type="submit" class="btn btn-primary">Register</button>
         </div>
       </form>
     </div>
