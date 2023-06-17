@@ -1,34 +1,43 @@
 @extends('layout.layout')
-@section('title','List doctors')
+
+@section('title', 'List doctors')
+
 @section('content')
-<div class="table-responsive">
-    <table class="table table-primary">
-        <thead>
-            <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Department</th>
-                <th scope="col">Phone</th>
-                <th scope="col">Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<div class="container">
+    <h1 style="text-align:center">List of Doctors</h1>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Department</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
                 @foreach ($doctors as $doctor)
-                <td>{{$doctor->name}}</td>
-                <td>{{$doctor->department}}</td>
-                <td>{{$doctor->phone}}</td>
-                <td>
-                    <a href="{{url("/doctors/".$doctor->id."/edit")}}" class="btn btn-warning">Edit</a>
-                    <form action="{{url("/doctors/".$doctor->id)}}" method="post" class="d-inline">
-                      {{ method_field('DELETE') }}
-                      @csrf
-                      <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?');">Delete</button>
-                      <a href="{{url("/doctors/".$doctor->id)}}" class="btn btn-primary">View</a>
-                    </form>
-                  </td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
+                <tr>
+                    <td>{{$doctor->name}}</td>
+                    <td>{{$doctor->department}}</td>
+                    <td>{{$doctor->phone}}</td>
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Doctor Actions">
+                            <a href="{{url("/doctors/".$doctor->id."/edit")}}" class="btn btn-outline-primary"><i class="fas fa-edit"></i> Edit</a>
+                            <form action="{{url("/doctors/".$doctor->id)}}" method="post" class="d-inline">
+                                {{ method_field('DELETE') }}
+                                @csrf
+                                <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Are you sure?');"><i class="fas fa-trash-alt"></i> Delete</button>
+                            </form>
+                            <a href="{{url("/doctors/".$doctor->id)}}" class="btn btn-outline-info"><i class="fas fa-eye"></i> View</a>
+                        </div>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
 </div>
 @endsection
