@@ -21,7 +21,7 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="nav-link" href="{{url("/people/create")}}">Create new person <span class="visually-hidden"></span></a>
-                                <a class="nav-link" href="{{url("/people")}}">Health list<span class="visually-hidden"></span></a>
+                                <a class="nav-link" href="{{url("/people")}}">People list<span class="visually-hidden"></span></a>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -31,7 +31,7 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="nav-link" href="{{url("/healths/create")}}">Create health information <span class="visually-hidden"></span></a>
-                                <a class="nav-link" href="{{url("/healths")}}">People list<span class="visually-hidden"></span></a>
+                                <a class="nav-link" href="{{url("/healths")}}">Health list<span class="visually-hidden"></span></a>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Check;
 use App\Models\Doctor;
+use Illuminate\Support\Facades\Auth;
 
 class CheckController extends Controller
 {
@@ -13,6 +14,8 @@ class CheckController extends Controller
      */
     public function index()
     {
+        if(!Auth::check()) { return redirect('/login'); }
+
         $checks = Check::all();
         return view('check.index',['checks' => $checks]);
     }
@@ -56,7 +59,7 @@ class CheckController extends Controller
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)
-    {   
+    {
         $doctors = Doctor::find($id);
         $check = Check::find($id);
         return view('check.edit', [

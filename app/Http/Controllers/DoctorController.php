@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Doctor;
 use App\Models\Health;
+use Illuminate\Support\Facades\Auth;
 
 class DoctorController extends Controller
 {
@@ -13,6 +14,8 @@ class DoctorController extends Controller
      */
     public function index()
     {
+        if(!Auth::check()) { return redirect('/login'); }
+
         $doctors = Doctor::All();
 
         return view('doctor.index',[
