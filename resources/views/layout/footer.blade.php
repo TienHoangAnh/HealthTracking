@@ -15,9 +15,9 @@
 
   .footer {
     background: black;
-    padding-bottom: 50px;
-    padding-top: 80px;
-    position: fixed;
+    padding-bottom: 20px;
+    padding-top: 40px;
+    position: sticky;
     bottom: 0;
     left: 0;
     width: 100%;
