@@ -11,11 +11,11 @@
        <span class="navbar-toggler-icon"></span>
      </button>
      <div>
-         <img style="height: 50px; width:110px; border-radius:50px" src="/upload/ctd.png" alt="ctd">
+        <a href="/people"> <img style="height: 50px; width:110px; border-radius:50px" src="/upload/ctd.png" alt="ctd"></a>
      </div>
      <div style="margin-left: 100px; font-size:20px" class="collapse navbar-collapse" id="navbarToggleExternalContent">
        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-         <li class="nav-item dropdown">
+         <li class="nav-item dropdown"> 
            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
              aria-expanded="false">
              People
