@@ -1,54 +1,95 @@
 @extends('layout.layout')
 @section('title', 'Doctor Details')
 @section('content')
-<section class="u-clearfix u-container-align-center u-palette-5-base u-section-1" id="sec-44e8">
-    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-      <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-        <div class="u-layout">
-          <div class="u-layout-row">
-            <div  class="u-container-align-center u-container-style u-image u-layout-cell u-size-25 u-image-1" data-image-width="826" data-image-height="551" >
-                <img  style="  width: 200px; height: 200px; object-fit: cover;" src="{{url("/upload/".$doctor->photo)}}" class="img-fluid rounded-top" alt="">
-                <div class="u-container-layout u-container-layout-1"></div>
-            </div>
-            <div class="u-container-align-left u-container-style u-layout-cell u-size-35 u-white u-layout-cell-2">
-              <div class="u-container-layout u-valign-middle u-container-layout-2">
-                <h2 style="color:black" class="u-align-left u-text u-text-default u-text-1"> Doctor {{$doctor->name}}</h2>
-                <p style="color:black" class="u-align-left u-text u-text-default u-text-2"> Department: {{$doctor->department}}</p>
-                <p style="color:black" class="u-align-left u-text u-text-default u-text-3">Description: {{$doctor->description}}</a>
-                </p>
-                <a href="https://nicepage.com/wordpress-themes" class="u-active-none u-align-left u-btn u-button-style u-hover-none u-none u-text-active-palette-5-base u-text-hover-palette-5-base u-btn-2"><span class="u-icon u-text-palette-5-base"><svg class="u-svg-content" viewBox="0 0 405.333 405.333" x="0px" y="0px" style="width: 1em; height: 1em;"><path d="M373.333,266.88c-25.003,0-49.493-3.904-72.704-11.563c-11.328-3.904-24.192-0.896-31.637,6.699l-46.016,34.752    c-52.8-28.181-86.592-61.952-114.389-114.368l33.813-44.928c8.512-8.512,11.563-20.971,7.915-32.64    C142.592,81.472,138.667,56.96,138.667,32c0-17.643-14.357-32-32-32H32C14.357,0,0,14.357,0,32    c0,205.845,167.488,373.333,373.333,373.333c17.643,0,32-14.357,32-32V298.88C405.333,281.237,390.976,266.88,373.333,266.88z"></path></svg></span>&nbsp;{{$doctor->phone}}
-                </a>
-              </div>
-            </div>
-          </div>
+<style>
+  .doctor-details {
+    background-color: #f8f9fa;
+    padding: 50px 0;
+  }
+
+  .doctor-info {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .doctor-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .doctor-department {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 15px;
+  }
+
+  .doctor-description {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 20px;
+  }
+
+  .btn-edit {
+    margin-right: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+
+  .btn-danger {
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+
+  .btn-edit:hover,
+  .btn-danger:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+  }
+
+  .doctor-image {
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    max-width: 300px; /* Kích thước cố định cho khung ảnh */
+    margin-right: 20px; /* Khoảng cách giữa khung ảnh và thông tin bác sĩ */
+  }
+
+  .doctor-image img {
+    width: 100%;
+    height: auto;
+  }
+</style>
+<h1 style="text-align:center;">@yield('title')</h1>
+<section class="doctor-details">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="doctor-image">
+          <img src="{{url("/upload/".$doctor->photo)}}" class="img-fluid rounded-top" alt="Doctor Image">
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="doctor-info">
+          <h2 class="doctor-name">Doctor {{$doctor->name}}</h2>
+          <p class="doctor-department">Department: {{$doctor->department}}</p>
+          <p class="doctor-description">Description: {{$doctor->description}}</p>
+          <a href="{{url("/doctors/".$doctor->id."/edit")}}" class="btn btn-primary btn-edit">Edit</a>
+          <form action="#" method="post" class="d-inline">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete?')">Delete</button>
+          </form>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 @endsection
-
-
-{{-- <div class="table-responsive">
-    <table class="table table-primary">
-        <thead>
-            <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Photo</th>
-                <th scope="col">Department</th>
-                <th scope="col">Phone</th>
-                <th scope="col">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="">
-                <td scope="row">{{$doctor->name}}</td>
-                <td>
-                    <img  style="  width: 200px; height: 200px; object-fit: cover;" src="{{url("/upload/".$doctor->photo)}}" class="img-fluid rounded-top" alt="">
-                </td>
-                <td>{{$doctor->department}}</td>
-                <td>{{$doctor->phone}}</td>
-                <td>{{$doctor->description}}</td>
-            </tr>
-        </tbody>
-    </table>
-   </div> --}}

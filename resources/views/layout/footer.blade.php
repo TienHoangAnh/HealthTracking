@@ -11,7 +11,6 @@
 
   .content {
     flex: 1;
-    
   }
 
   .footer {
@@ -49,7 +48,6 @@
     color: #554c86;
   }
 
-  /* START FOOTER SOCIAL DESIGN */
   .footer_profile {
     margin-bottom: 40px;
   }
