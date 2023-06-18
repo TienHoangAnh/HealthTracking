@@ -1,50 +1,41 @@
 @extends('layout.layout')
-@section('title','Person')
+@section('title','Person List')
 @section('content')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-<h2>@yield('title')</h2>
-
-<div class="table-responsive">
-    <table class="table table-striped
-    table-hover
-    table-borderless
-    table-primary
-    align-middle">
-        <thead class="table-light">
-            <tr>
-                <th>Name Person</th>
-                <th>IDcard Person</th>
-                <th>Phone Person</th>
-                <th>Action</th>
-            </tr>
+<div class="container">
+    <h1 style="text-align:center">List of People</h1>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Name Person</th>
+                    <th scope="col">IDcard Person</th>
+                    <th scope="col">Phone Person</th>
+                    <th scope="col">Action</th>
+                </tr>
             </thead>
-            <tbody class="table-group-divider">
-                  @foreach ($people as $person)
-                  <tr class="table-primary" >
+            <tbody>
+                @foreach ($people as $person)
+                <tr>
+                    <td>{{$person->name}}</td>
+                    <td>{{$person->idcard}}</td>
+                    <td>{{$person->phone}}</td>
                     <td>
-                        {{$person->name}}
+                        <div class="btn-group" role="group" aria-label="Doctor Actions">
+                            <a href="{{url("/people/".$person->id."/edit")}}" class="btn btn-outline-primary"><i class="fas fa-edit"></i> Edit</a>
+                            <form action="{{url("/people/".$person->id)}}" method="post" class="d-inline">
+                                {{ method_field('DELETE') }}
+                                @csrf
+                                <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Are you sure?');"><i class="fas fa-trash-alt"></i> Delete</button>
+                            </form>
+                            <a href="{{url("/people/".$person->id)}}" class="btn btn-outline-info"><i class="fas fa-eye"></i> View</a>
+                        </div>
                     </td>
-                    <td>
-                        {{$person->idcard}}
-                    </td>
-                    <td>
-                        {{$person->phone}}
-                    </td>
-                    <td>
-                      <a href="{{url("/people/".$person->id)}}" class="btn btn-primary">View</a>
-                      <a href="{{url("/people/".$person->id."/edit")}}" class="btn btn-warning">Edit</a>
-                      <form action="{{url("/people/".$person->id)}}" method="post" class="d-inline">
-                        {{ method_field('DELETE') }}
-                        @csrf
-                        <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?');">Delete</button>
-                      </form>
-                    </td>
-                  </tr>
-                  @endforeach
+                </tr>
+                @endforeach
             </tbody>
-            <tfoot>
-            </tfoot>
-    </table>
-  </div>
-
+        </table>
+    </div>
+</div>
 @endsection
