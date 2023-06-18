@@ -1,7 +1,13 @@
 @extends('layout.layout')
 @section('title', 'New Health Information')
 @section('content')
-<form action="/healths" method="post">
+<style>
+    .mb-3{
+        max-width: 400px;
+    }
+</style>
+<h1 style="margin-left:600px" >Edit Health</h1>
+<form style="margin-left:500px" action="/healths" method="post">
     @csrf
     <div class="mb-3">
         <label for="person" class="form-label">Name</label>
@@ -11,7 +17,7 @@
           @endforeach
       </select>
       </div>
-    <div class="mb-3">
+    <div  class="mb-3">
         <label for="weight" class="form-label">Weight (kg) </label>
         <input type="number" class="form-control" id="weight" name="weight" placeholder="Weight" value="{{$health->weight}}">
     </div>
@@ -23,6 +29,6 @@
         <label for="symptom" class="form-label">Symptom</label>
         <input type="text" class="form-control" id="symptom" name="symptom" placeholder="Symptom" value="{{$health->symptom}}">
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button style="margin-left: 157px" type="submit" class="btn btn-primary">Submit</button>
 </form>
 @endsection
