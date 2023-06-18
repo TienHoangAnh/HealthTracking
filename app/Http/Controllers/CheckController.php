@@ -60,7 +60,7 @@ class CheckController extends Controller
      */
     public function edit(string $id)
     {
-        $doctors = Doctor::find($id);
+        $doctors = Doctor::All();
         $check = Check::find($id);
         return view('check.edit', [
             'check' => $check, 'doctors' => $doctors,
