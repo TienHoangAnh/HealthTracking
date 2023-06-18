@@ -72,7 +72,7 @@ class CheckController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $check = new Check();
+        $check = Check::find($id);
 
         $check->date = $request->date;
         $check->address = $request->address;

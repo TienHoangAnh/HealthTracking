@@ -67,7 +67,7 @@ class PrescriptionController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $prescription = new Prescription();
+        $prescription = Prescription::find($id);
 
         $prescription->name = $request->name;
         $prescription->amount = $request->amount;

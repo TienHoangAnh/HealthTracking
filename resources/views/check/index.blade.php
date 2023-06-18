@@ -30,12 +30,13 @@
                   <td>
                       <div class="btn-group" role="group" aria-label="Doctor Actions">
                           <a href="{{url("/checks/".$check->id."/edit")}}" class="btn btn-outline-primary"><i class="fas fa-edit"></i> Edit</a>
-                          <a href="{{url("/checks/".$check->id)}}" class="btn btn-outline-info"><i class="fas fa-eye"></i> View</a>
+                         
                           <form action="{{url("/checks/".$check->id)}}" method="post" class="d-inline">
                               {{ method_field('DELETE') }}
                               @csrf
                               <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Are you sure?');"><i class="fas fa-trash-alt"></i> Delete</button>
                           </form>
+                          <a href="{{url("/checks/".$check->id)}}" class="btn btn-outline-info"><i class="fas fa-eye"></i> View</a>
                       </div>
                   </td>
               </tr>
