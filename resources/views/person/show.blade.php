@@ -21,13 +21,28 @@
     margin-bottom: 10px;
   }
 
-  .person-department {
+  .person-birth {
     font-size: 16px;
     color: #666;
     margin-bottom: 15px;
   }
 
-  .person-description {
+  .person-idcard {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 20px;
+  }
+  .person-address {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 20px;
+  }
+  .person-phone {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 20px;
+  }
+  .person-email {
     font-size: 16px;
     color: #444;
     margin-bottom: 20px;
@@ -76,9 +91,13 @@
       </div>
       <div class="col-md-8">
         <div class="person-info">
-          <h2 class="person-name">Person: {{$person->name}}</h2>
-          <p class="person-department">Department: {{$person->birth}}</p>
-          <p class="person-description">Description: {{$person->idcard}}</p>
+          <h2 class="person-name">Person Name: {{$person->name}}</h2>
+          <p class="person-birth">Birth: {{$person->birth}}</p>
+          <p class="person-idcard">IDcard: {{$person->idcard}}</p>
+          <p class="person-address">Address: {{$person->address}}</p>
+          <p class="person-phone">Phone: {{$person->phone}}</p>
+          <p class="person-email">Email: {{$person->email}}</p>
+
           <a href="{{url("/people/".$person->id."/edit")}}" class="btn btn-primary btn-edit">Edit</a>
           <form action="#" method="post" class="d-inline">
             @csrf
