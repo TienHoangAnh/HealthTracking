@@ -4,7 +4,6 @@
 
 @section('content')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
 <div class="container">
     <h1 style="text-align:center">List of Doctors</h1>
     <div class="table-responsive">
