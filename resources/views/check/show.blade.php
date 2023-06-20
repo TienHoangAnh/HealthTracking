@@ -85,7 +85,7 @@
           <h2 class="check-doctor">Doctor: {{$check->doctor->name}}</h2>
           <p class="check-date">Date: {{$check->date}}</p>
           <p class="check-address">Address: {{$check->address}}</p>
-          <p class="check-department">Department: {{$check->department}}</p>
+          <p class="check-department">Department: {{$check->doctor->department}}</p>
           <a href="{{url("/checks/".$check->id."/edit")}}" class="btn btn-primary btn-edit">Edit</a>
           <form action="#" method="post" class="d-inline">
             @csrf
