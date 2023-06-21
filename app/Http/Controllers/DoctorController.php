@@ -43,7 +43,8 @@ class DoctorController extends Controller
         $doctor->phone= $request->phone;
         $doctor->description = $request->description;
         $photo = $request->file('photo')->store('public');
-        $doctor->photo = substr($photo,strlen('public/'));
+        $doctor->photo = substr($photo, strlen('public/'));
+    
         $doctor->save();
         return redirect('/doctors');
     }

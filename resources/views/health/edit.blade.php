@@ -7,7 +7,8 @@
     }
 </style>
 <h1 style="margin-left:600px" >Edit Health</h1>
-<form style="margin-left:500px" action="/healths" method="post">
+<form style="margin-left:500px" action="/healths/{{$health->id}}" method="post">
+    {{ method_field('PUT') }}
     @csrf
     <div class="mb-3">
         <label for="person" class="form-label">Name</label>

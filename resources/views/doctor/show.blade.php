@@ -20,10 +20,15 @@
     color: #333;
     margin-bottom: 10px;
   }
+  .doctor-phone {
+    font-size: 16px;
+    color: #282727;
+    margin-bottom: 15px;
+  }
 
   .doctor-department {
     font-size: 16px;
-    color: #666;
+    color: #3e3d3d;
     margin-bottom: 15px;
   }
 
@@ -80,6 +85,7 @@
         <div class="doctor-info">
           <h2 class="doctor-name">Doctor {{$doctor->name}}</h2>
           <p class="doctor-department">Department: {{$doctor->department}}</p>
+          <p class="doctor-phone">Phone: {{$doctor->phone}}</p>
           <p class="doctor-description">Description: {{$doctor->description}}</p>
           <a href="{{url("/doctors/".$doctor->id."/edit")}}" class="btn btn-primary btn-edit">Edit</a>
           <form action="#" method="post" class="d-inline">

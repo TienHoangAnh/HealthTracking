@@ -3,6 +3,12 @@
 @section('title', 'List doctors')
 
 @section('content')
+
+<style>
+    .action{
+        margin-left:200px;
+    }
+</style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <div class="container">
     <h1 style="text-align:center">List of Doctors</h1>
@@ -13,7 +19,7 @@
                     <th scope="col">Name</th>
                     <th scope="col">Department</th>
                     <th scope="col">Phone</th>
-                    <th scope="col">Action</th>
+                    <th class="action" scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>

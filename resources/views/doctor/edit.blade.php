@@ -6,7 +6,7 @@
     <div class="col-md-6 offset-md-3">
       <div class="edit-doctor-form">
         <h2 class="text-center">Edit Doctor</h2>
-        <form action="/doctors/{{$doctor->id}}" method="post">
+        <form action="/doctors/{{$doctor->id}}" method="post" enctype="multipart/form-data">
           {{ method_field('PUT') }}
           @csrf
           <div class="mb-3">

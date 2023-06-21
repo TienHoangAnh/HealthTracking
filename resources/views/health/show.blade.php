@@ -64,6 +64,7 @@
           <h2 class="health-name">Name: {{$health->person->name}}</h2>
           <p class="health-weight">Weight: {{$health->weight}}</p>
           <p class="health-height">Height: {{$health->height}}</p>
+          <p class="health-phone">Phone of person: {{$health->person->phone}}</p>
           <p class="health-symptom">Symptom: {{$health->symptom}}</p>
           <a href="{{url("/healths/".$health->id."/edit")}}" class="btn btn-primary btn-edit">Edit</a>
           <form action="#" method="post" class="d-inline">
