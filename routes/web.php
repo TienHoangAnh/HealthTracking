@@ -32,7 +32,6 @@ Route::resource('/people', PersonController::class)->middleware('auth');
 Route::resource('/prescriptions', PrescriptionController::class)->middleware('auth');
 Route::resource('/healths', HealthController::class)->middleware('auth');
 Route::resource('/doctors', DoctorController::class)->middleware('auth');
-Route::resource('/doctors',DoctorController::class)->middleware('auth');
 Route::resource('/checks',CheckController::class)->middleware('auth');
 Route::get('/login', AuthenticationController::class . '@loginIndex')->name('login');
 Route::get('/register', AuthenticationController::class . '@registerIndex');
