@@ -23,13 +23,23 @@
 
   .health-weight {
     font-size: 16px;
-    color: #666;
+    color: #272626;
     margin-bottom: 15px;
   }
 
   .health-height {
     font-size: 16px;
-    color: #444;
+    color: #2a2929;
+    margin-bottom: 20px;
+  }
+  .health-phone {
+    font-size: 16px;
+    color: #2d2c2c;
+    margin-bottom: 20px;
+  }
+  .health-symptom{
+    font-size: 16px;
+    color: #2d2c2c;
     margin-bottom: 20px;
   }
 
