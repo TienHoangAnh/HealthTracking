@@ -20,7 +20,7 @@
     <main>
         @yield('content')
     </main>
-    <footer>
+    <footer style="padding-top: 300px">
         @include('layout.footer')
     </footer>
 
