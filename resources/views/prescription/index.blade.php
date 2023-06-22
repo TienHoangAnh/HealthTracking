@@ -11,6 +11,7 @@
           <thead class="thead-dark">
               <tr>
                 <th>Name Prescription</th>
+                <th>Person</th>
                 <th>Action</th>
               </tr>
           </thead>
@@ -21,6 +22,9 @@
                     {{$prescription->name}}
                     </a>
                   </td>
+                  <td>@foreach($prescription->people as $person)
+                    <span class="badge badge-info">{{$person->name}}</span>
+                  @endforeach</td>
                   <td>
                       <div class="btn-group" role="group" aria-label="Doctor Actions">
                           <a href="{{url("/prescriptions/".$prescription->id."/edit")}}" class="btn btn-outline-primary"><i class="fas fa-edit"></i> Edit</a>

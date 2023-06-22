@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Prescription;
+use \App\Models\Person;
 use Illuminate\Support\Facades\Auth;
 
 class PrescriptionController extends Controller
@@ -25,7 +26,8 @@ class PrescriptionController extends Controller
      */
     public function create()
     {
-        return view('prescription.create');
+        $people = Person::all(); 
+        return view('prescription.create', ['people' => $people]);
     }
 
     /**
@@ -40,6 +42,7 @@ class PrescriptionController extends Controller
         $prescription->using = $request->using;
 
         $prescription->save();
+        $prescription->people()->attach($request->people);
 
         return redirect('/prescriptions');
     }
@@ -59,7 +62,8 @@ class PrescriptionController extends Controller
     public function edit(string $id)
     {
         $prescription = Prescription::find($id);
-        return view('prescription.edit', ['prescription' => $prescription]);
+        $people = Person::All();
+        return view('prescription.edit', ['prescription' => $prescription, 'people' => $people]);
     }
 
     /**
@@ -69,6 +73,7 @@ class PrescriptionController extends Controller
     {
         $prescription = Prescription::find($id);
 
+        $prescription->people()->sync($request->people);
         $prescription->name = $request->name;
         $prescription->amount = $request->amount;
         $prescription->using = $request->using;

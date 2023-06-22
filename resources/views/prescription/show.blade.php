@@ -21,6 +21,11 @@
       color: #333;
       margin-bottom: 15px;
     }
+    .prescription-person {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 15px;
+    }
   
     .prescription-address {
       font-size: 16px;
@@ -83,6 +88,9 @@
         <div class="col-md-8">
           <div class="prescription-info">
             <h2 class="prescription-doctor">Name Prescription: {{$prescription->name}}</h2>
+            <p class="prescription-person">Name Person: @foreach($prescription->people as $person)
+              {{$person->name}}
+          @endforeach</p>
             <p class="prescription-date">Amount Prescription: {{$prescription->amount}}</p>
             <p class="prescription-address">Using Prescription: {{$prescription->using}}</p>
             <a href="{{url("/prescriptions/".$prescription->id."/edit")}}" class="btn btn-primary btn-edit">Edit</a>

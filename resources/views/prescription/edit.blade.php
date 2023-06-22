@@ -10,6 +10,15 @@
         <form action="/prescriptions/{{$prescription->id}}" method="post">
           {{ method_field('PUT') }}
           @csrf
+          <div class="mb-3">
+            <label for="people" class="form-label">Person</label>
+            <select class="form-control" id="people" name="people[]">
+              <option selected>Choose Person</option>
+              @foreach($people as $person)
+              <option value="{{ $person->id }}">{{ $person->name }}</option>
+              @endforeach
+            </select>
+          </div>
             <div class="mb-3">
                 <label for="name" class="form-label">Name Prescription</label>
                 <input type="text" class="form-control" id="name" name="name" placeholder="Name Prescription" value="{{$prescription->name}}">
